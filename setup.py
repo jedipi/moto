@@ -5,13 +5,17 @@ from setuptools import setup, find_packages
 install_requires = [
     "Jinja2>=2.8",
     "boto>=2.36.0",
-    "httpretty==0.8.10",
+    "httpretty==0.8.14",
     "requests",
     "xmltodict",
     "six",
     "werkzeug",
     "pytz",
     "python-dateutil",
+]
+
+dependency_links = [
+    "https://github.com/jedipi/httpretty/tarball/efb20a7678118683b526cc1c33bf5cb3c2f64db5#egg=httpretty-0.8.14",
 ]
 
 extras_require = {
@@ -37,6 +41,7 @@ setup(
     packages=find_packages(exclude=("tests", "tests.*")),
     install_requires=install_requires,
     extras_require=extras_require,
+    dependency_links=dependency_links,
     license="Apache",
     test_suite="tests",
     classifiers=[
